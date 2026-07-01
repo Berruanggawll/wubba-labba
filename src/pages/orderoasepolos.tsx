@@ -122,8 +122,25 @@ export default function OrderOasePolos() {
         }
         const handlingFee = feeMatch ? parseInt(feeMatch[1]) * 1000 : 0;
 
+        const lowerCaseInput = text.toLowerCase();
         let deliveryMethod = 'Kirim';
-        if (lines.some(line => line.toLowerCase().includes('ambil'))) deliveryMethod = 'Ambil';
+        if (lowerCaseInput.includes('ambil')) deliveryMethod = 'Ambil';
+
+        const fusoMatch = lowerCaseInput.match(/fuso(?:\s+([^\s\n]+))?/i);
+        if (fusoMatch) {
+            const expeditionName = fusoMatch[1] ? fusoMatch[1].toUpperCase() : '';
+            deliveryMethod = 'Muat Fuso' + (expeditionName ? ' ' + expeditionName : '');
+        }
+
+        const tarikMatch = lowerCaseInput.match(/tarik(?:\s+([^\s\n]+))?/i);
+        if (tarikMatch) {
+            const expeditionName = tarikMatch[1] ? tarikMatch[1].toUpperCase() : '';
+            deliveryMethod = 'Tarik Kontainer,' + (expeditionName ? ' ' + expeditionName : '');
+        }
+
+        let truckingInfo = '';
+        const truckingMatch = lowerCaseInput.match(/trucking\s+([^\n]+)/i);
+        if (truckingMatch && truckingMatch[1]) truckingInfo = `(trucking ${truckingMatch[1].trim()})`;
 
         let deliveryTime = 'malam jam 6';
         const lowerCaseLines = lines.map(line => line.toLowerCase());
