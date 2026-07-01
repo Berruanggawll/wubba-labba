@@ -136,7 +136,7 @@ export default function OrderOasePolos() {
         const tarikMatch = lowerCaseInput.match(/tarik(?:\s+([^\s\n]+))?/i);
         if (tarikMatch) {
             const expeditionName = tarikMatch[1] ? tarikMatch[1].toUpperCase() : '';
-            deliveryMethod = 'Tarik Kontainer,' + (expeditionName ? ' ' + expeditionName : '');
+            deliveryMethod = 'Tarik Kontainer' + (expeditionName ? ' ' + expeditionName : '');
         }
 
         // PENYELESAIANNYA DI SINI:
