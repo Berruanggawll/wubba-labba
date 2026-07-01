@@ -124,6 +124,7 @@ export default function OrderMapPolos() {
 
         const lowerCaseInput = text.toLowerCase();
         let deliveryMethod = 'Kirim';
+
         if (lowerCaseInput.includes('ambil')) deliveryMethod = 'Ambil';
 
         const fusoMatch = lowerCaseInput.match(/fuso(?:\s+([^\s\n]+))?/i);
@@ -138,9 +139,13 @@ export default function OrderMapPolos() {
             deliveryMethod = 'Tarik Kontainer,' + (expeditionName ? ' ' + expeditionName : '');
         }
 
-        let truckingInfo = '';
+        // PENYELESAIANNYA DI SINI:
+        // Kita tangkap datanya dulu, lalu langsung buat 'const truckingInfo' di dalam blok if
         const truckingMatch = lowerCaseInput.match(/trucking\s+([^\n]+)/i);
-        if (truckingMatch && truckingMatch[1]) truckingInfo = `(trucking ${truckingMatch[1].trim()})`;
+        if (truckingMatch && truckingMatch[1]) {
+            const truckingInfo = `(trucking ${truckingMatch[1].trim()})`;
+            deliveryMethod += ' ' + truckingInfo;
+        }
 
         let deliveryTime = 'malam jam 6';
         const lowerCaseLines = lines.map(line => line.toLowerCase());
