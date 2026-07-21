@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\pages"
   ],
-  "SelectedNode": "\\index.html",
+  "SelectedNode": "\\src\\pages\\orderoasepolos.tsx",
   "PreviewInSolutionExplorer": false
 }
