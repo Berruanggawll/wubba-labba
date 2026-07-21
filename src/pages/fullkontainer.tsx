@@ -17,7 +17,8 @@ const PRODUCT_DATA: Category[] = [
             { name: "Botol 220 ml", capacity: 1703 }, { name: "Botol 250 ml", capacity: 1559 },
             { name: "Botol 400 ml", capacity: 1672 }, { name: "Botol 500 ml", capacity: 1672 },
             { name: "Botol 560 ml", capacity: 1417 }, { name: "Botol 600 ml", capacity: 1315 },
-            { name: "Botol 700 ml", capacity: 1801 }, { name: "Botol 800 ml", capacity: 1576 },
+            { name: "Botol 700 ml", capacity: 1801 }, { name: "Botol 750 ml", capacity: 1704 },
+            { name: "Botol 800 ml", capacity: 1576 },
             { name: "Botol 820 ml", capacity: 1888 }, { name: "Botol 850 ml", capacity: 1888 },
             { name: "Botol 900 ml", capacity: 1888 }, { name: "Botol 1000 ml", capacity: 1576 }
         ]
@@ -36,8 +37,8 @@ const PRODUCT_DATA: Category[] = [
         category: "Refil", items: [
             { name: "Refil 400 ml", capacity: 2171 }, { name: "Refil 700 ml", capacity: 2000 },
             { name: "Refil 800 ml", capacity: 2000 }, { name: "Refil 900 ml", capacity: 1896 },
-            { name: "Refil 1000 ml", capacity: 1754 }, { name: "Refil 1800 ml", capacity: 1754 },
-            { name: "Refil 2000 ml", capacity: 1754 }
+            { name: "Refil 1000 ml", capacity: 1755 }, { name: "Refil 1800 ml", capacity: 1755 },
+            { name: "Refil 2000 ml", capacity: 1755 }
         ]
     },
     { category: "Cup", items: [{ name: "Cup 180 ml", capacity: 1920 }] }
